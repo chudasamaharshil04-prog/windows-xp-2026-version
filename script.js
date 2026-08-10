@@ -20,24 +20,24 @@ let state = {
   paintTool: 'brush'
 };
 
-// ===== SVG ICONS =====
+// ===== SVG ICONS - NEO FRUTIGER AERO =====
 function getIconSVG(type, size = 44) {
   const s = size;
   const icons = {
-    mycomputer: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="28" rx="3" fill="#4da3ff" stroke="#245edb" stroke-width="1.5"/><rect x="7" y="9" width="34" height="20" rx="1" fill="#e8f4ff"/><rect x="16" y="35" width="16" height="4" rx="1" fill="#b0b8c8"/><rect x="12" y="39" width="24" height="3" rx="1.5" fill="#cfd6e4"/></svg>`,
-    recyclebin: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M14 16h20l-2 24H16L14 16z" fill="#8aaa8a" stroke="#5a7a5a" stroke-width="1"/><rect x="12" y="12" width="24" height="4" rx="2" fill="#6a9a6a"/><rect x="20" y="8" width="8" height="4" rx="1" fill="#6a9a6a"/><line x1="20" y1="20" x2="19" y2="36" stroke="#5a7a5a" stroke-width="1"/><line x1="24" y1="20" x2="24" y2="36" stroke="#5a7a5a" stroke-width="1"/><line x1="28" y1="20" x2="29" y2="36" stroke="#5a7a5a" stroke-width="1"/></svg>`,
-    folder: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M4 14V38a3 3 0 003 3h34a3 3 0 003-3V18a3 3 0 00-3-3H22l-4-5H7a3 3 0 00-3 3z" fill="#FFD54F" stroke="#F9A825" stroke-width="1"/><path d="M4 18h40v20a3 3 0 01-3 3H7a3 3 0 01-3-3V18z" fill="#FFECB3" opacity="0.5"/></svg>`,
-    documents: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="8" y="4" width="28" height="36" rx="2" fill="#e3f2fd" stroke="#90caf9" stroke-width="1.5"/><rect x="14" y="10" width="16" height="2" rx="1" fill="#90caf9"/><rect x="14" y="16" width="16" height="2" rx="1" fill="#90caf9"/><rect x="14" y="22" width="12" height="2" rx="1" fill="#90caf9"/><rect x="14" y="28" width="14" height="2" rx="1" fill="#90caf9"/><path d="M30 4l8 8h-6a2 2 0 01-2-2V4z" fill="#bbdefb"/></svg>`,
-    browser: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="#4da3ff" stroke="#245edb" stroke-width="1.5"/><ellipse cx="24" cy="24" rx="8" ry="18" fill="none" stroke="#fff" stroke-width="1.2"/><line x1="6" y1="24" x2="42" y2="24" stroke="#fff" stroke-width="1.2"/><line x1="24" y1="6" x2="24" y2="42" stroke="#fff" stroke-width="1.2"/><ellipse cx="24" cy="14" rx="14" ry="4" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.5"/><ellipse cx="24" cy="34" rx="14" ry="4" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.5"/></svg>`,
-    mediaplayer: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="32" rx="4" fill="#1a1a2e"/><circle cx="24" cy="24" r="10" fill="none" stroke="#7bcf8e" stroke-width="2"/><polygon points="21,18 32,24 21,30" fill="#7bcf8e"/></svg>`,
-    paint: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="3" fill="#fff" stroke="#ccc" stroke-width="1"/><circle cx="16" cy="18" r="4" fill="#e74c3c"/><circle cx="28" cy="14" r="4" fill="#3498db"/><circle cx="20" cy="28" r="4" fill="#f1c40f"/><circle cx="32" cy="26" r="4" fill="#2ecc71"/><path d="M36 38c-4-6-8-2-12-8s-4-10-8-6-8 10-8 10" stroke="#9b59b6" stroke-width="2" fill="none"/></svg>`,
-    calculator: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="4" width="28" height="40" rx="3" fill="#e8eef4" stroke="#b0b8c8" stroke-width="1.5"/><rect x="14" y="8" width="20" height="10" rx="2" fill="#d4e8d4"/><rect x="14" y="22" width="5" height="5" rx="1" fill="#cfd6e4"/><rect x="21.5" y="22" width="5" height="5" rx="1" fill="#cfd6e4"/><rect x="29" y="22" width="5" height="5" rx="1" fill="#cfd6e4"/><rect x="14" y="29" width="5" height="5" rx="1" fill="#cfd6e4"/><rect x="21.5" y="29" width="5" height="5" rx="1" fill="#cfd6e4"/><rect x="29" y="29" width="5" height="5" rx="1" fill="#4da3ff"/><rect x="14" y="36" width="12.5" height="5" rx="1" fill="#cfd6e4"/><rect x="29" y="36" width="5" height="5" rx="1" fill="#4da3ff"/></svg>`,
-    settings: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="8" fill="none" stroke="#666" stroke-width="2.5"/><path d="M24 4l3 6h-6l3-6zM24 44l-3-6h6l-3 6zM4 24l6-3v6l-6-3zM44 24l-6 3v-6l6 3zM10.3 10.3l5.5 2.5-2.5-5.5L10.3 10.3zM37.7 37.7l-5.5-2.5 2.5 5.5 3-3zM37.7 10.3l-2.5 5.5-5.5-2.5 8-3zM10.3 37.7l2.5-5.5 5.5 2.5-8 3z" fill="#888"/></svg>`,
-    network: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="38" r="4" fill="#4da3ff"/><path d="M12 28a16 16 0 0124 0" fill="none" stroke="#4da3ff" stroke-width="2.5" stroke-linecap="round"/><path d="M6 20a24 24 0 0136 0" fill="none" stroke="#4da3ff" stroke-width="2.5" stroke-linecap="round"/><path d="M0 12a32 32 0 0148 0" fill="none" stroke="#4da3ff" stroke-width="2.5" stroke-linecap="round"/></svg>`,
-    notepad: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="4" width="28" height="40" rx="2" fill="#fffde7" stroke="#c8b960" stroke-width="1.5"/><line x1="16" y1="14" x2="34" y2="14" stroke="#bbb" stroke-width="0.8"/><line x1="16" y1="20" x2="34" y2="20" stroke="#bbb" stroke-width="0.8"/><line x1="16" y1="26" x2="30" y2="26" stroke="#bbb" stroke-width="0.8"/><line x1="16" y1="32" x2="32" y2="32" stroke="#bbb" stroke-width="0.8"/><rect x="14" y="4" width="2" height="6" rx="1" fill="#e74c3c"/><rect x="20" y="4" width="2" height="6" rx="1" fill="#e74c3c"/><rect x="26" y="4" width="2" height="6" rx="1" fill="#e74c3c"/></svg>`,
-    shutdown: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="none" stroke="#e74c3c" stroke-width="3"/><line x1="24" y1="8" x2="24" y2="24" stroke="#e74c3c" stroke-width="3" stroke-linecap="round"/></svg>`,
-    controlpanel: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="6" width="14" height="14" rx="3" fill="#4da3ff"/><rect x="28" y="6" width="14" height="14" rx="3" fill="#7bcf8e"/><rect x="6" y="28" width="14" height="14" rx="3" fill="#FFB900"/><rect x="28" y="28" width="14" height="14" rx="3" fill="#F25022"/></svg>`,
-    explorer: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M4 14V38a3 3 0 003 3h34a3 3 0 003-3V18a3 3 0 00-3-3H22l-4-5H7a3 3 0 00-3 3z" fill="#FFD54F" stroke="#F9A825" stroke-width="1"/><rect x="8" y="20" width="8" height="8" rx="1" fill="#fff" opacity="0.5"/><rect x="20" y="20" width="8" height="8" rx="1" fill="#fff" opacity="0.5"/><rect x="32" y="20" width="8" height="8" rx="1" fill="#fff" opacity="0.5"/></svg>`
+    mycomputer: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><linearGradient id="mcA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6ab0ff"/><stop offset="100%" stop-color="#1a66e0"/></linearGradient></defs><rect x="4" y="7" width="40" height="28" rx="10" fill="url(#mcA)" stroke="rgba(255,255,255,0.65)" stroke-width="1"/><rect x="8" y="11" width="32" height="17" rx="5" fill="#eaf4ff"/><rect x="16" y="36.5" width="16" height="3.8" rx="1.9" fill="#b7c0d0"/><rect x="12" y="41.5" width="24" height="3.2" rx="1.6" fill="#d4dbe8"/><circle cx="38" cy="13" r="2.4" fill="white" opacity="0.85"/></svg>`,
+    recyclebin: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><linearGradient id="rbA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8eac0"/><stop offset="100%" stop-color="#72b880"/></linearGradient></defs><path d="M12 20h24L34 42H14L12 20z" fill="url(#rbA)" stroke="rgba(0,0,0,0.08)" stroke-width="0.8"/><rect x="10" y="14" width="28" height="6" rx="3" fill="#86c994" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/><rect x="19" y="9" width="10" height="5" rx="2.4" fill="#86c994"/></svg>`,
+    folder: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><linearGradient id="fdA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe88a"/><stop offset="100%" stop-color="#ffb800"/></linearGradient></defs><path d="M6 14.5V38.5a4 4 0 004 4h30a4 4 0 004-4V19a4 4 0 00-4-4H22l-4-5H10a4 4 0 00-4 4.5z" fill="url(#fdA)" stroke="#f5a300" stroke-width="0.8"/><path d="M6 20h38a2 2 0 012 2v16.5a4 4 0 01-4 4H10a4 4 0 01-4-4V20z" fill="white" opacity="0.34"/></svg>`,
+    documents: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><linearGradient id="docA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f1f7ff"/><stop offset="100%" stop-color="#c9dbff"/></linearGradient></defs><rect x="9" y="5" width="26" height="36" rx="8" fill="url(#docA)" stroke="#8fb6ff" stroke-width="1"/><rect x="15" y="12.5" width="14" height="2" rx="1" fill="#7aaaff"/><rect x="15" y="17.5" width="14" height="2" rx="1" fill="#7aaaff"/><rect x="15" y="22.5" width="10" height="2" rx="1" fill="#7aaaff" opacity="0.7"/><path d="M30 5l7 7h-5a2 2 0 01-2-2V5z" fill="#9cc3ff"/></svg>`,
+    browser: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><radialGradient id="brA" cx="0.32" cy="0.32" r="0.9"><stop offset="0%" stop-color="#7bc6ff"/><stop offset="100%" stop-color="#1a66e0"/></radialGradient></defs><circle cx="24" cy="24" r="17.5" fill="url(#brA)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/><ellipse cx="24" cy="24" rx="8" ry="17.5" fill="none" stroke="white" stroke-width="1.1" opacity="0.9"/><path d="M6.5 24h35M24 6.5v35" stroke="white" stroke-width="1.1" opacity="0.85" stroke-linecap="round"/></svg>`,
+    mediaplayer: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><linearGradient id="mpA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2b58"/><stop offset="100%" stop-color="#13132a"/></linearGradient></defs><rect x="6" y="8" width="36" height="32" rx="12" fill="url(#mpA)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/><circle cx="24" cy="24" r="11" fill="none" stroke="#4af2a0" stroke-width="1.8"/><polygon points="21,17 33,24 21,31" fill="#4af2a0"/></svg>`,
+    paint: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="10" fill="white" stroke="#d0d8e4" stroke-width="1"/><circle cx="17" cy="19" r="4.2" fill="#ff5a5a" stroke="white" stroke-width="1.2"/><circle cx="29" cy="15" r="4" fill="#2a7bff" stroke="white" stroke-width="1.2"/><circle cx="20" cy="30" r="3.6" fill="#ffbe0b" stroke="white" stroke-width="1.2"/><circle cx="32" cy="28" r="3.8" fill="#4af2a0" stroke="white" stroke-width="1.2"/><path d="M34 38c-4-6-8-2-12-8s-4-10-8-6-8 10-8 10" stroke="#a07bff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>`,
+    calculator: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="4" width="28" height="40" rx="10" fill="#eef3ff" stroke="#b8c6da" stroke-width="1"/><rect x="14" y="8" width="20" height="11" rx="4" fill="#d9ecd9" stroke="#9ac99a" stroke-width="0.7"/><rect x="14" y="23" width="5" height="5" rx="2" fill="#c8d2e2"/><rect x="21.5" y="23" width="5" height="5" rx="2" fill="#c8d2e2"/><rect x="29" y="23" width="5" height="5" rx="2" fill="#8fb8ff"/><rect x="14" y="30" width="5" height="5" rx="2" fill="#c8d2e2"/><rect x="21.5" y="30" width="5" height="5" rx="2" fill="#c8d2e2"/><rect x="29" y="30" width="5" height="5" rx="2" fill="#5e9aff"/><rect x="14" y="37" width="12.5" height="5" rx="2" fill="#c8d2e2"/><rect x="29" y="37" width="5" height="5" rx="2" fill="#2a7bff"/></svg>`,
+    settings: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="8.5" fill="none" stroke="#66748e" stroke-width="2.2"/><path d="M24 4.5l2.9 5.2h-5.8L24 4.5zM24 43.5l-2.9-5.2h5.8L24 43.5zM4.5 24l5.2-2.9v5.8L4.5 24zM43.5 24l-5.2 2.9v-5.8L43.5 24z" fill="#8e9bb2"/><circle cx="24" cy="24" r="2.5" fill="#66748e"/></svg>`,
+    network: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="38" r="4" fill="#4af2a0"/><path d="M12 28a16 16 0 0124 0" fill="none" stroke="#4af2a0" stroke-width="2.6" stroke-linecap="round"/><path d="M6 20a24 24 0 0136 0" fill="none" stroke="#4af2a0" stroke-width="2.6" stroke-linecap="round" opacity="0.84"/><path d="M0 12a32 32 0 0148 0" fill="none" stroke="#4af2a0" stroke-width="2.6" stroke-linecap="round" opacity="0.62"/></svg>`,
+    notepad: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="4" width="27" height="39" rx="8" fill="#fffbe6" stroke="#d8c46a" stroke-width="1"/><line x1="17" y1="15" x2="33" y2="15" stroke="#d0c090" stroke-width="0.9"/><line x1="17" y1="20" x2="33" y2="20" stroke="#d0c090" stroke-width="0.9"/><rect x="14" y="4" width="2.2" height="7" rx="1" fill="#ff6b6b"/><rect x="20" y="4" width="2.2" height="7" rx="1" fill="#ff6b6b"/><rect x="26" y="4" width="2.2" height="7" rx="1" fill="#ff6b6b"/></svg>`,
+    shutdown: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16.5" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/><line x1="24" y1="8" x2="24" y2="24" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/></svg>`,
+    controlpanel: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="6" width="14" height="14" rx="6" fill="#5a9aff"/><rect x="28" y="6" width="14" height="14" rx="6" fill="#4af2a0"/><rect x="6" y="28" width="14" height="14" rx="6" fill="#ffbe0b"/><rect x="28" y="28" width="14" height="14" rx="6" fill="#ff6b4a"/></svg>`,
+    explorer: `<svg width="${s}" height="${s}" viewBox="0 0 48 48"><defs><linearGradient id="exA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe88a"/><stop offset="100%" stop-color="#ffb800"/></linearGradient></defs><path d="M6 15V39a4 4 0 004 4h28a4 4 0 004-4V19a4 4 0 00-4-4H22l-4-5H10a4 4 0 00-4 5z" fill="url(#exA)" stroke="#f5a300" stroke-width="0.8"/><rect x="10" y="22" width="8" height="8" rx="2.5" fill="white" opacity="0.72"/><rect x="21" y="22" width="8" height="8" rx="2.5" fill="white" opacity="0.72"/></svg>`
   };
   return icons[type] || icons.folder;
 }
@@ -57,22 +57,28 @@ function showScreen(id) {
 function runBIOS() {
   const biosText = document.getElementById('bios-text');
   const lines = [
-    'XP BIOS (C) 2026 Microsoft Corporation',
-    'BIOS Date: 01/15/2026  Ver: 2026.1',
+    '>>> WINDOWS XP // NEO BIOS v2026.1.26100 [FRUTIGER AERO REVIVAL]',
+    '>>> Copyright (C) 2026 Microsoft Corporation • NEO Subsystem',
     '',
-    'CPU: Microsoft Virtual Processor @ 3.6GHz',
-    'Memory Test: 8192MB OK',
+    'CPU: Microsoft NEO Virtual Processor @ 5.2GHz (Turbo Glass Core) [OK]',
+    'MEM: 16384MB LPDDR6X Glass Memory • Frequency: 8400MHz • Test: OK',
+    'GPU: NEO Aero Glass Accelerator • 12GB VRAM • DirectX 13 • RayTracing [OK]',
+    'NEURAL: Copilot+ NPU 120 TOPS • Aero Intelligence [OK]',
     '',
-    'Detecting Primary Master... Virtual HDD 256GB',
-    'Detecting Primary Slave... None',
-    'Detecting Secondary Master... Virtual CD-ROM',
+    'Detecting Storage...',
+    '  NVMe 0: Virtual Crystal Drive 512GB • Read: 12GB/s [OK]',
+    '  NVMe 1: Bliss Archive 256GB • Hologram Cache [OK]',
+    'Detecting Display... Fluid Glass Panel @ 240Hz • HDR1000 • Luna Curved [OK]',
     '',
-    'Press DEL to enter SETUP',
+    'Initializing NEO Subsystems...',
+    '  > Quantum Glass Compositor ... DONE',
+    '  > Hologram Taskbar Island ... DONE',
+    '  > Frutiger Aero Orbs + Bliss Engine ... DONE',
+    '  > Luna Signature + 4-Panel Flag ... DONE',
     '',
-    'Initializing USB Controllers... Done',
-    'Initializing Display Adapter... Done',
+    'Press DEL to enter NEO SETUP • Press F12 for Boot Menu',
     '',
-    'Boot from Hard Disk...',
+    'Booting from NEO://XP2026.FUTURE/BUILD26100...',
     ''
   ];
   let i = 0;
@@ -86,12 +92,18 @@ function runBIOS() {
       setTimeout(() => {
         showScreen('boot-screen');
         setTimeout(() => {
-          showScreen('setup-screen');
-          initSetup();
-        }, 2500);
-      }, 800);
+          // Skip setup if returning user? keep for demo
+          const hasSeen = localStorage.getItem('xpNeoVisited');
+          if (!hasSeen) {
+            showScreen('setup-screen');
+            initSetup();
+          } else {
+            showWelcomeScreen();
+          }
+        }, 3000);
+      }, 900);
     }
-  }, 120);
+  }, 95);
 }
 
 // ===== SETUP =====
@@ -137,19 +149,20 @@ function renderSetupContent() {
   switch (step.type) {
     case 'info':
       content.innerHTML = `
-        <h2>Welcome to Windows XP 2026</h2>
-        <p>This wizard will guide you through the installation of Windows XP 2026 Remastered Edition on your computer.</p>
-        <p>This modern edition combines the beloved Windows XP experience with contemporary glass design and enhanced performance.</p>
-        <div style="margin-top:16px;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px;border:1px solid rgba(255,255,255,0.1);">
-          <p style="color:rgba(255,255,255,0.9);font-size:13px;">
-            <strong>System Requirements:</strong><br>
-            • Processor: 1 GHz or faster<br>
-            • Memory: 512 MB RAM minimum<br>
-            • Storage: 10 GB available space<br>
-            • Display: 800×600 minimum resolution
+        <h2>Welcome to Windows XP // NEO 2026</h2>
+        <p>Future Edition • Frutiger Aero Revival • Luna Glass • Hologram Island Taskbar</p>
+        <p>Reimagined for 2026: XP's soul with quantum glass compositor, floating orbs, neon Bliss, and intelligent aero. Classic green Start, but now with holographic depth.</p>
+        <div style="margin-top:16px;padding:16px;background:linear-gradient(180deg, rgba(58,240,255,0.10), rgba(42,123,255,0.08));border-radius:14px;border:1px solid rgba(58,240,255,0.18);backdrop-filter:blur(8px)">
+          <p style="color:rgba(255,255,255,0.92);font-size:12.5px;line-height:1.7">
+            <strong style="letter-spacing:0.5px">NEO SYSTEM REQUIREMENTS:</strong><br>
+            • Processor: NEO Glass Core 5.2GHz • NPU 120 TOPS<br>
+            • Memory: 16GB LPDDR6X Glass + Hologram Cache<br>
+            • Storage: 512GB Crystal NVMe 12GB/s<br>
+            • Display: Fluid Glass 240Hz HDR • Aero Orbs Engine<br>
+            • Sound: Spatial Audio + XP Startup Nostalgia
           </p>
         </div>
-        <p style="margin-top:12px;">Click <strong>Next</strong> to continue.</p>`;
+        <p style="margin-top:14px;font-size:12px">Click <strong>Next</strong> to initialize NEO installation • Build 26100</p>`;
       nextBtn.textContent = 'Next';
       break;
 
@@ -355,10 +368,14 @@ function setupBack() {
 }
 
 function finishSetup() {
+  localStorage.setItem('xpNeoVisited','1');
   showScreen('boot-screen');
+  // Change boot text to NEO Ready
+  const bs = document.querySelector('#boot-screen .boot-subtitle');
+  if (bs) bs.textContent = 'NEO KERNEL READY • LAUNCHING GLASS SHELL...';
   setTimeout(() => {
     showWelcomeScreen();
-  }, 2000);
+  }, 2400);
 }
 
 function showWelcomeScreen() {
@@ -504,15 +521,37 @@ function updateIconSelection() {
 function initClock() {
   updateClock();
   setInterval(updateClock, 1000);
+  // parallax for orbs
+  document.addEventListener('mousemove', (e) => {
+    const orbs = document.querySelectorAll('.fx-orb');
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    orbs.forEach((orb, i) => {
+      const factor = (i + 1) * 8;
+      orb.style.transform = `translate3d(${x * factor}px, ${y * factor}px, 0) scale(${1 + i*0.02})`;
+    });
+  });
 }
 
 function updateClock() {
   const now = new Date();
   let h = now.getHours();
   const ampm = h >= 12 ? 'PM' : 'AM';
-  h = h % 12 || 12;
+  const h12 = h % 12 || 12;
   const m = String(now.getMinutes()).padStart(2, '0');
-  document.getElementById('tray-clock').textContent = `${h}:${m} ${ampm}`;
+  const s = String(now.getSeconds()).padStart(2, '0');
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  
+  const tray = document.getElementById('tray-clock');
+  if (tray) {
+    tray.innerHTML = `${h12}:${m} ${ampm}<small style="display:block;font-size:9px;opacity:.6;letter-spacing:.2px">${months[now.getMonth()]} ${now.getDate()} • NEO</small>`;
+    tray.title = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()} 2026 - ${h12}:${m}:${s} ${ampm}`;
+  }
+  const dTime = document.getElementById('desktop-clock-time');
+  const dDate = document.getElementById('desktop-clock-date');
+  if (dTime) dTime.textContent = `${h12}:${m}`;
+  if (dDate) dDate.textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()} 2026 • ${ampm} • ${s}s uptime`;
 }
 
 // ===== DESKTOP EVENTS =====
@@ -1680,33 +1719,30 @@ function settingsTab(tab, el) {
     `;
   } else if (tab === 'system') {
     panel.innerHTML = `
-      <div class="settings-section-title">System Information</div>
-      <div style="font-size:12px;line-height:2;">
-        <div><strong>OS:</strong> Windows XP 2026 Remastered Edition</div>
-        <div><strong>Version:</strong> 6.2026.1</div>
-        <div><strong>User:</strong> ${state.userName}</div>
-        <div><strong>Computer:</strong> DESKTOP-XP2026</div>
-        <div><strong>Processor:</strong> Virtual Processor @ 3.6GHz</div>
-        <div><strong>Memory:</strong> 8192 MB RAM</div>
-        <div><strong>Display:</strong> ${window.innerWidth} × ${window.innerHeight}</div>
-        <div><strong>Storage:</strong> 256 GB Virtual HDD</div>
+      <div class="settings-section-title">NEO System • Quantum Glass</div>
+      <div style="font-size:12.5px;line-height:2.2;background:rgba(248,250,255,0.6);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
+        <div><strong>OS:</strong> Windows XP // NEO 2026 Future Edition</div>
+        <div><strong>Build:</strong> 26100. Future • Frutiger Aero Revival</div>
+        <div><strong>User:</strong> ${state.userName} • NEO ID: xp_${state.userName.toLowerCase()}_2026</div>
+        <div><strong>Device:</strong> DESKTOP-NEO-2026 • Glass Island</div>
+        <div><strong>CPU:</strong> NEO Glass Core @ 5.2GHz + NPU 120 TOPS</div>
+        <div><strong>Memory:</strong> 16384 MB LPDDR6X Glass</div>
+        <div><strong>GPU:</strong> Aero Glass Accelerator 12GB • DirectX 13</div>
+        <div><strong>Display:</strong> ${window.innerWidth} × ${window.innerHeight} • 240Hz HDR • Luna Curved</div>
+        <div><strong>Storage:</strong> 512 GB Crystal NVMe • 12GB/s</div>
       </div>
     `;
   } else if (tab === 'about') {
     panel.innerHTML = `
-      <div style="text-align:center;padding:20px;">
-        <svg width="64" height="64" viewBox="0 0 80 80" style="margin-bottom:12px;">
-          <rect x="2" y="2" width="34" height="34" rx="6" fill="#F25022"/>
-          <rect x="42" y="2" width="34" height="34" rx="6" fill="#7FBA00"/>
-          <rect x="2" y="42" width="34" height="34" rx="6" fill="#00A4EF"/>
-          <rect x="42" y="42" width="34" height="34" rx="6" fill="#FFB900"/>
-        </svg>
-        <h2 style="color:var(--primary-blue);">Windows XP 2026</h2>
-        <p style="color:#888;margin:4px 0;">Remastered Edition</p>
-        <p style="font-size:12px;color:#666;margin-top:12px;">Version 6.2026.1 (Build 26100)</p>
-        <p style="font-size:11px;color:#999;margin-top:8px;">© 2026 Microsoft Corporation.<br>All rights reserved.</p>
-        <div style="margin-top:16px;padding:12px;background:rgba(36,94,219,0.04);border-radius:8px;">
-          <p style="font-size:11px;color:#555;">This product is a fan-made interactive demonstration<br>created for educational and nostalgic purposes.</p>
+      <div style="text-align:center;padding:22px;">
+        <div style="width:72px;height:72px;margin:0 auto 14px;border-radius:18px;background:linear-gradient(180deg, rgba(42,123,255,0.14), rgba(42,123,255,0.06));display:grid;place-items:center;border:1px solid rgba(42,123,255,0.12)">
+          <svg width="48" height="48" viewBox="0 0 80 80"><rect x="4" y="4" width="30" height="30" rx="8" fill="#F25022"/><rect x="44" y="4" width="30" height="30" rx="8" fill="#7FBA00"/><rect x="4" y="44" width="30" height="30" rx="8" fill="#00A4EF"/><rect x="44" y="44" width="30" height="30" rx="8" fill="#FFB900"/></svg>
+        </div>
+        <h2 style="color:#10204a;letter-spacing:-0.02em">Windows XP // NEO</h2>
+        <p style="color:#2a7bff;font-weight:700;letter-spacing:2px;font-size:10px;margin:6px 0">2026 FUTURE EDITION • BUILD 26100</p>
+        <p style="font-size:12px;color:#5a6a86;margin-top:12px;line-height:1.6">Frutiger Aero Revival + Luna Future<br>Glass Morphism • Hologram Island • Bliss Engine</p>
+        <div style="margin-top:16px;padding:12px;background:linear-gradient(180deg, rgba(42,123,255,0.06), rgba(58,240,255,0.04));border-radius:12px;border:1px solid rgba(42,123,255,0.08)">
+          <p style="font-size:11px;color:#3a4a68;line-height:1.6">Fan-made NEO concept by Harshil • Code_Like_Dev<br>Not affiliated with Microsoft. Made for nostalgia & future UX exploration.</p>
         </div>
       </div>
     `;
